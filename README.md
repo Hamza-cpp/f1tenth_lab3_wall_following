@@ -28,12 +28,12 @@ Using the two distances $a$ and $b$ from the laser scan, the angle $\theta$ betw
 
 $$ \alpha=\mbox{tan}^{-1}\left(\frac{a\mbox{cos}(\theta)-b}{a\mbox{sin}(\theta)}\right) $$
 
-We can then express $D_t$ as 
+We can then express $D_t$ as
 
 $$ D_t=b\mbox{cos}(\alpha) $$
 
 to get the current distance between the car and the right wall. What's our error term $e(t)$, then? It's simply the difference between the desired distance and actual distance! For example, if our desired distance is 1 meter from the wall, then $e(t)$ becomes $1-D_t$.
-	
+
 However, we have a problem on our hands. Remember that this is a race: your car will be traveling at a high speed and therefore will have a non-instantaneous response to whatever speed and servo control you give to it. If we simply use the current distance to the wall, we might end up turning too late, and the car may crash. Therefore, we must look to the future and project the car ahead by a certain lookahead distance (let's call it $L$). Our new distance $D_{t+1}$ will then be
 
 $$D_{t+1}=D_t+L\mbox{sin}(\alpha)$$
@@ -65,11 +65,4 @@ Implement wall following to make the car drive autonomously around the Levine Ha
 
 **Deliverable 1**: After you're finished, update the entire skeleton package directory with your `wall_follow` package and directly commit and push to the repo Github classroom created for you. Your commited code should start and run in simulation smoothly.
 
-**Deliverable 2**: Make a screen cast of running your wall following node in the simulation. Include a link to the video on YouTube in **`SUBMISSION.md`**.
-
-## VI: Grading Rubric
-
-- Compilation: **10** Points
-- Implemented PID: **40** Points
-- Tuned PID: **40** Points
-- Video: **10** Points
+**Deliverable 2**: Make a screen cast of running your wall following node in the simulation.
