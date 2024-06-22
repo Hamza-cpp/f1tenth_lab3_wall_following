@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
 
-import numpy as np
-from sensor_msgs.msg import LaserScan
+# import numpy as np
+# from sensor_msgs.msg import LaserScan
 from ackermann_msgs.msg import AckermannDriveStamped
 
 class WallFollow(Node):
